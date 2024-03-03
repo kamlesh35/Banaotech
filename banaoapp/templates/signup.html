@@ -1,0 +1,134 @@
+
+<style>
+    * {
+        box-sizing: border-box;
+        background-color: rgb(167, 207, 99);
+
+    }
+.myclass {
+        float: right;
+        width: 700px;
+        border: 5px solid rgb(22, 6, 6);
+        margin-top: 8px;
+        margin-right: 20px;
+        text-align: center;
+
+
+    }
+
+    input {
+        font-size: large;
+        size: 0cap;
+        font-display: flax;
+    }
+    h3{
+        text-align: center;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size:500%;
+    }
+
+    form{
+        text-align: center;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: x-large;
+        text-underline-offset: unset;
+    }
+
+    button{
+   
+        background-color: rgb(59, 232, 79);
+        margin-top: 15px;
+        margin-bottom: 1%;
+        size: 10px;
+        font-size: 100%;
+        cursor:pointer;
+        padding: 13px 28px;
+        border-radius: 7px;
+        text-align: center;
+        
+    }
+
+    input , .phone ,.radio_control{
+        padding: 0px 5px 5px;
+        margin-top: 3px;
+        width : 40% ;
+        height: 40px ;
+        border-radius: 15px ;
+        border-color:2px solid black;
+        border-width: 2px ;
+        border-color: black;
+        text-align: center;
+        font-size: large;
+        font-display: primary;
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    
+    }
+    form{
+        font-size:large;
+        box-sizing:4px;
+    }
+   
+    
+</style>
+
+{% comment %} javascripts for matching password {% endcomment %}
+<script>
+function validatePassword() {
+    var password = document.getElementById("password").value;
+    var confirmPassword = document.getElementById("confirm_password").value;
+
+    if (password != confirmPassword) {
+        alert("Passwords do not match!");
+        return false;
+    }
+    return true;
+}
+</script>
+
+
+
+    <h3>Register Now</h3>
+</div>
+
+<form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="rowsetup">
+        
+            <div>Username</div>
+            <input type="text" class="form-control" name="uname" placeholder="User Name" required="">
+            <div>First Name</div>
+            <input type="text" class="form-control" name="fname" placeholder="first Name" required="">
+
+            <div>Last name</div>
+            <input type="text" class="form-control" name="lname" placeholder="Last name" required="">
+      
+            <div>Email Id</div>
+            <input type="Email" class="form-control" name="Email" placeholder="XYZ@gmail.com" required="">
+        
+  
+   
+            <div>Contact</div>
+            <input type="numeric" class="form-control" name="contact" placeholder="+91********" required>
+            <div class="mb-2">Address</div>
+            <input type="text" class="form-control" name="add" placeholder="Enter Address" required>
+                <div>Password</div>
+                <input type="password" class="form-control" name="pwd" id="password" placeholder="Password" required>
+               
+                    <div>Comfirm Password</div>
+                    <input type="password" class="form-control" name="pwd2" id = "password1" placeholder="Confirm Password" required>
+                    <div>Image</div>
+                    <input type="file" class="form-control" name="image" required="">
+              <div class="col-md-6">
+                <label>User Type</label>
+                <div class="form-control">
+                Patient <input type="radio" placeholder="Patient" name="type" style="margin-right:2%" required="" value="Patient">
+                Doctor <input type="radio" placeholder="Patient" name="type"   required="" value="Doctor">
+                </div>
+                </div>
+
+    
+        <button type="submit" class="btn submit mt-4">Register</button>
+
+</form>
+</div>
+</div>
